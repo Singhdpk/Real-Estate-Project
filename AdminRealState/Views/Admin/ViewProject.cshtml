@@ -1,0 +1,383 @@
+﻿@model AdminPanel.Models.Project
+@{
+    ViewBag.Title = "View Project";
+}
+
+<style>
+    .tab-content {
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-tabs {
+        margin-bottom: 0;
+    }
+</style>
+
+@*<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>*@
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<h2>View Project</h2>  @Html.ActionLink("Edit Project", "EditProject" + "/" + Model.Id)
+
+
+@using (Html.BeginForm("CreateNewProject", "", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.AntiForgeryToken()
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#project">Project</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="project" style="margin-top: 15px;">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        @Html.LabelFor(model => model.Name)
+                    </div>
+                    <div class="col-sm-3">
+                        @Model.Name
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Possession)
+                </div>
+                <div class="col-sm-3">
+                    @Model.Possession
+                </div>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Pricing)
+                </div>
+                <div class="col-sm-3">
+                    @Model.Pricing
+                </div>
+
+            </div>
+        </div>
+
+        <br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#amenityDetails">Amenity Details</a></li>
+        </ul>
+
+
+        @*<h2>Amenity Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterAmenity.Count; i++)
+{
+
+    <div class="tab-content">
+        <div>
+            <div class="row form-group">
+                <div class="col-sm-3">
+                    <b>@ViewBag.dataMasterAmenity[i].Name</b>
+                </div>
+                <div class="col-sm-3">
+                    @Model.Amenities[i].Value
+                    <input type="hidden" class="form-group" name="Amenities[@i].MasterAmenityId" value="@ViewBag.dataMasterAmenity[i].Id" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+    <br /><br />
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#apartmentBuildQualityDetails">Apartment Build Quality Details</a></li>
+        </ul>
+        @*<h2>Apartment Build Quality Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterApartmentBuildQuality.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterApartmentBuildQuality[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Html.LabelFor(model => model.ApartmentBuildQualities[i].Name)
+                </div>
+                <div class="col-sm-5">
+                    @Model.ApartmentBuildQualities[i].Name
+                    <input type="hidden" name="ApartmentBuildQualities[@i].MasterApartmentBuildQualityId" value="@ViewBag.dataMasterApartmentBuildQuality[i].Id" />
+                </div>
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.ApartmentBuildQualities[i].Value)
+                </div>
+                <div class="col-sm-3">
+                    @Model.ApartmentBuildQualities[i].Value
+
+                </div>
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#constructionqualityParameters">Construction Quality Parameters</a></li>
+        </ul>
+        @*<h2>Construction Quality Parameters</h2>*@
+for (int i = 0; i < ViewBag.dataMasterConstructionQualityParameter.Count; i++)
+{
+    <div class="tab-content">
+        <div class="row form-group">
+
+            <div class="col-sm-1">
+                @ViewBag.dataMasterConstructionQualityParameter[i].Name
+            </div>
+            <div class="col-sm-3">
+                @Model.ConstructionQualityParameters[i].Value
+                <input type="hidden" name="ConstructionQualityParameters[@i].MasterConstructionQualityParameterId" value="@ViewBag.dataMasterConstructionQualityParameter[i].Id" />
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#inventoryDetails">Inventory Details</a></li>
+        </ul>
+        @*<h2>Inventory Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterConstructionQualityParameter.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterInventory[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Model.Inventories[i].Value
+                    <input type="hidden" name="Inventories[@i].MasterInventoryId" value="@ViewBag.dataMasterInventory[i].Id" />
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="lLegalClarityDetails">Legal Clarity Details</a></li>
+        </ul>
+        @*<h2>Legal Clarity Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterLegalClarity.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterLegalClarity[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Model.LegalClarities[i].Value
+                    <input type="hidden" name="LegalClarities[@i].MasterLegalClarityId" value="@ViewBag.dataMasterLegalClarity[i].Id" />
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#livabilityDetails">Livability Details</a></li>
+        </ul>
+        @*<h2>Livability Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterLegalClarity.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterLivability[i].Name
+                </div>
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Livabilities[i].Name)
+                </div>
+                <div class="col-sm-3">
+                    @Model.Livabilities[i].Name
+                </div>
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Livabilities[i].Value)
+                </div>
+                <div class="col-sm-3">
+                    @Model.Livabilities[i].Value
+                    <input type="hidden" name="Livabilities[@i].MasterLivabilityId" value="@ViewBag.dataMasterLivability[i].Id" />
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#projectInformation">Project Information</a></li>
+        </ul>
+        @*<h2>Project Information</h2>*@
+for (int i = 0; i < ViewBag.dataMasterProjectInformation.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterProjectInformation[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Model.ProjectInformations[i].Value
+                    <input type="hidden" name="ProjectInformations[@i].MasterProjectInformationId" value="@ViewBag.dataMasterProjectInformation[i].Id" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+}<br /><br />
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#locationDetails">Location Details</a></li>
+        </ul>
+        @*<h2>Location Details</h2>*@
+        <div class="tab-content">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        @Html.LabelFor(model => model.Locations.AddressLine1)
+                    </div>
+                    <div class="col-sm-3">
+                        @Model.Locations.AddressLine1
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        @Html.LabelFor(model => model.Locations.AddressLine2)
+                    </div>
+                    <div class="col-sm-3">
+                        @Model.Locations.AddressLine2
+                    </div>
+
+                </div>
+            </div>
+        </div><br /><br>
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#BuilderProfile">Builder Profile</a></li>
+        </ul>
+        <div class="tab-content">
+            @*<h2>Builder Profile</h2>*@
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        @Html.LabelFor(model => model.BuilderName)
+                    </div>
+                    <div class="col-sm-3">
+                        @Model.BuilderName
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    for (int i = 0; i < ViewBag.dataMasterProjectInformation.Count; i++)
+    {
+
+        <div class="form-group">
+            <table>
+                <tr>
+                    <td>
+                        @ViewBag.dataMasterBuilderProfile[i].Name
+                    </td>
+                <tr />
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.BuilderProfiles[i].Value)
+                    </td>
+                    <td>
+                        @Model.BuilderProfiles[i].Value
+                        <input type="hidden" name="BuilderProfiles[@i].MasterBuilderProfileId" value="@ViewBag.dataMasterBuilderProfile[i].Id" />
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+    <br /><br />
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#BuilderProfile">Profile Picture</a></li>
+        </ul>
+
+        <div class="form-group">
+            <div>
+                @*@Html.LabelFor(model => model.ProfilePicture)*@
+            </div>
+            <div>
+                <img height="240" width="320" src="@Url.Content("~//ProjectProfilePicture//"+ Model.ProfilePicture)" alt="Image" />
+            </div>
+        </div><br /><br />
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#BuilderProfile">Cover Picture</a></li>
+        </ul>
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.CoverPicture)*@
+            <img height="240" width="320" src="@Url.Content("~/ProjectCoverPicture/"+ Model.CoverPicture)" alt="Image" />
+        </div><br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#BuilderProfile">Introductory Video</li>
+        </ul>
+        <div height="240" width="320" controls>
+            <video height="240" width="320">
+                <source src="@Url.Content("~/IntroductoryVideo/" + Model.IntroductoryVideos.Link)" type='video/mp4' />
+            </video>
+        </div>
+    for (int i = 0; i < Model.Images.Count; i++)
+    {
+        <div class="form-group">
+            <div>
+                <img height="240" width="320" src="@Url.Content("~/ProjectImages/" +Model.Images[i].Image)" alt="Image" />
+            </div>
+        </div><br /><br />
+    }
+
+
+}
+
+
+
+

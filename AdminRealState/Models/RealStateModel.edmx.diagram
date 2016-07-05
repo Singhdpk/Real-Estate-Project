@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="112b81f7dffe41089ae10327bcaea149" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="dbRealEstateModel.tblAmenity" Width="1.5" PointX="3" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblApartmentBuildQuality" Width="1.5" PointX="6" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblBuilderProfile" Width="1.5" PointX="3" PointY="34.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblCity" Width="1.5" PointX="3.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblConstructionQualityParameter" Width="1.5" PointX="6" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblFollowProject" Width="1.5" PointX="6" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblImage" Width="1.5" PointX="3" PointY="43.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblInappropriate" Width="1.5" PointX="11.25" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblIntroductoryVideo" Width="1.5" PointX="3" PointY="45.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblInventory" Width="1.5" PointX="3" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblLegalClarity" Width="1.5" PointX="3" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblLevel" Width="1.5" PointX="4.5" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblLivability" Width="1.5" PointX="9" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblLocation" Width="1.5" PointX="6" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterAmenity" Width="1.5" PointX="0.75" PointY="38" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterApartmentBuildQuality" Width="1.5" PointX="3.75" PointY="49" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterConstructionQualityParameter" Width="1.5" PointX="3.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterInventory" Width="1.5" PointX="0.75" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterLegalClarity" Width="1.5" PointX="0.75" PointY="41" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterLivability" Width="1.5" PointX="6.75" PointY="42" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterProjectInformation" Width="1.5" PointX="3.75" PointY="52" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterReview" Width="1.5" PointX="9" PointY="44" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblProject" Width="1.5" PointX="0.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblProjectInformation" Width="1.5" PointX="6" PointY="38.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblRecentlyViewed" Width="1.5" PointX="9" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblReview" Width="1.5" PointX="9" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblReviewDetail" Width="1.5" PointX="11.25" PointY="36.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblReviewRatingDetail" Width="1.5" PointX="11.25" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblUpdatedVideo" Width="1.5" PointX="0.5" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblUser" Width="1.5" PointX="6.75" PointY="20.375" IsExpanded="true" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterAmenity_tblAmenity" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblAmenity" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterApartmentBuildQuality_tblApartmentBuildQuality" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblApartmentBuildQuality" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblCity_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterConstructionQualityParameter_tblConstructionQualityParameter" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblConstructionQualityParameter" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblFollowProject" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblUser_tblFollowProject" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblImage" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblReview_tblInappropriate" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblUser_tblInappropriate" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblIntroductoryVideo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterInventory_tblInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblInventory" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterLegalClarity_tblLegalClarity" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblLegalClarity" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblLevel_tblUser" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterLivability_tblLivability" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblLivability" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblLocation" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterProjectInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterReview_tblReviewRatingDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblRecentlyViewed" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblReview" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblUpdatedVideo" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblUser_tblRecentlyViewed" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblReview_tblReviewDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblReview_tblReviewRatingDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblUser_tblReview" ManuallyRouted="false" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblUser_tblReviewDetails" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblAverageRating" Width="1.5" PointX="3" PointY="14.75" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblMasterBuilderProfile" Width="1.5" PointX="0.625" PointY="24.125" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblAverageRating" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblMasterBuilderProfile_tblBuilderProfile" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblBuilder" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblBuilderComment" Width="1.5" PointX="11.625" PointY="22.25" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblBuilderDirector" Width="1.5" PointX="3" PointY="4.25" />
+        <EntityTypeShape EntityType="dbRealEstateModel.tblProjectBuilderMapping" Width="1.5" PointX="6.375" PointY="17.125" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblBuilder_tblBuilderComment" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblBuilder_tblBuilderDirector" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblBuilder_tblBuilderProfile" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblBuilder_tblProjectBuilderMapping" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblReview_tblBuilderComment" />
+        <AssociationConnector Association="dbRealEstateModel.FK_tblProject_tblProjectBuilderMapping" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

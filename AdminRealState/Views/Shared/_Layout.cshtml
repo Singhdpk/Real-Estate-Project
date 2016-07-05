@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Admin Panel</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">My Own space Admin Panel</a>
+            </div>
+            <ul class="nav navbar-nav">
+              
+                <li class="dropdown">
+                  
+                    <ul class="dropdown-menu">
+                      
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("View All Project", "ViewAllProject")
+                </li>
+                <li>@Html.ActionLink("Create New Project", "CreateNewProject")</li>
+               
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+     
+        <hr />
+    </div>
+    <footer style="background-color:#262424; color: #fff; padding-top:20px; padding-bottom:20px; text-align: center;">
+        <p>&copy; @DateTime.Now.Year -<b>My Own Space</b> </p>
+    </footer>
+    @RenderSection("scripts", required: false)
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>*@
+</body>
+</html>

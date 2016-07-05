@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AdminPanel.Models.Project>
+
+@{
+    ViewBag.Title = "ViewAllProject";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#project">View All Projects</a></li>
+</ul>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+            @Html.ActionLink("View", "ViewProject", new { id = item.Id }) |
+            @Html.ActionLink("Edit", "EditProject", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+        }
+    </table>

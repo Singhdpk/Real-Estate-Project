@@ -1,0 +1,455 @@
+﻿@model AdminPanel.Models.Project
+@{
+    ViewBag.Title = "EditProject";
+}
+
+<link href="~/views/shared/style.css" rel="stylesheet" />
+<style>
+    .tab-content {
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-tabs {
+        margin-bottom: 0;
+    }
+</style>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<h2>EditProject</h2>
+@Html.ActionLink("Go back to view project", "ViewProject" + "/" + Model.Id)
+@using (Html.BeginForm("EditProject", "", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#project">Project</a></li>
+    </ul>
+    @*<h4>Project Information</h4>*@
+
+    <div class="tab-content">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div id="project" style="margin-top: 15px;">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-1">
+                        @Html.LabelFor(model => model.Name)
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.Name)
+                    </div>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Possession)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Possession)
+                </div>
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.Possession, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Pricing)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Pricing)
+                </div>
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.Pricing, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.ProfilePicture)
+                </div>
+                <div class="col-sm-3">
+                    <input name="ProfilePictureDetail" id="" type="file" />
+                </div>
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.ProfilePicture, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.CoverPicture)
+                </div>
+                <div class="col-sm-3">
+                    <input name="CoverPictureDetail" id="" type="file" />
+                </div>
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.CoverPicture, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div><br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#amenityDetails">Amenity Details</a></li>
+    </ul>
+    for (int i = 0; i < ViewBag.dataMasterAmenity.Count; i++)
+    {
+
+        <div class="tab-content">
+            <div>
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <b>@ViewBag.dataMasterAmenity[i].Name</b>
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.EditorFor(model => model.Amenities[i].Value)
+                        <input type="hidden" class="form-group" name="Amenities[@i].MasterAmenityId" value="@ViewBag.dataMasterAmenity[i].Id" />
+
+                    </div>
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.Amenities[i].Value, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @*<legend>Amenity Details</legend>
+        for (int i = 0; i < ViewBag.dataMasterBuilderProfile.Count; i++)
+        {
+        <div class="form-group">
+            <table>
+                <tr>
+
+                    <td>
+                        <b>@ViewBag.dataMasterBuilderProfile[i].Name</b>
+
+                    </td>
+                    <td>
+                        @Html.EditorFor(Model => Model.BuilderProfiles[i].Value)
+                        @Html.HiddenFor(Model => Model.BuilderProfiles[i].Id)
+                        @Html.HiddenFor(Model => Model.BuilderProfiles[i].ProjectId)
+                        @Html.HiddenFor(Model => Model.BuilderProfiles[i].MasterBuilderProfileId)
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        }*@<br /><br />
+
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#apartmentBuildQualityDetails">Apartment Build Quality Details</a></li>
+        </ul>
+        @*<h2>Apartment Build Quality Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterApartmentBuildQuality.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterApartmentBuildQuality[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Html.LabelFor(model => model.ApartmentBuildQualities[i].Name)
+                </div>
+                <div class="col-sm-5">
+                    @Html.EditorFor(model => model.ApartmentBuildQualities[i].Name)
+                    <input type="hidden" name="ApartmentBuildQualities[@i].MasterApartmentBuildQualityId" value="@ViewBag.dataMasterApartmentBuildQuality[i].Id" />
+                </div>
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.ApartmentBuildQualities[i].Value)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.ApartmentBuildQualities[i].Value)
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.ApartmentBuildQualities[i].Value, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#constructionqualityParameters">Construction Quality Parameters</a></li>
+    </ul>
+    @*<h2>Construction Quality Parameters</h2>*@
+for (int i = 0; i < ViewBag.dataMasterConstructionQualityParameter.Count; i++)
+{
+    <div class="tab-content">
+        <div class="row form-group">
+
+            <div class="col-sm-1">
+                @ViewBag.dataMasterConstructionQualityParameter[i].Name
+            </div>
+            <div class="col-sm-3">
+                @Html.EditorFor(model => model.ConstructionQualityParameters[i].Value)
+                <input type="hidden" name="ConstructionQualityParameters[@i].MasterConstructionQualityParameterId" value="@ViewBag.dataMasterConstructionQualityParameter[i].Id" />
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.ConstructionQualityParameters[i].Value, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#inventoryDetails">Inventory Details</a></li>
+    </ul>
+    @*<h2>Inventory Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterConstructionQualityParameter.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterInventory[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Inventories[i].Value)
+                    <input type="hidden" name="Inventories[@i].MasterInventoryId" value="@ViewBag.dataMasterInventory[i].Id" />
+
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.Inventories[i].Value, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="lLegalClarityDetails">Legal Clarity Details</a></li>
+    </ul>
+    @*<h2>Legal Clarity Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterLegalClarity.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterLegalClarity[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.LegalClarities[i].Value)
+                    <input type="hidden" name="LegalClarities[@i].MasterLegalClarityId" value="@ViewBag.dataMasterLegalClarity[i].Id" />
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.LegalClarities[i].Value, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#livabilityDetails">Livability Details</a></li>
+    </ul>
+    @*<h2>Livability Details</h2>*@
+for (int i = 0; i < ViewBag.dataMasterLegalClarity.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterLivability[i].Name
+                </div>
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Livabilities[i].Name)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Livabilities[i].Name)
+                </div>
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Livabilities[i].Value)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Livabilities[i].Value)
+                    <input type="hidden" name="Livabilities[@i].MasterLivabilityId" value="@ViewBag.dataMasterLivability[i].Id" />
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.Livabilities[i].Value, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#projectInformation">Project Information</a></li>
+    </ul>
+    @*<h2>Project Information</h2>*@
+for (int i = 0; i < ViewBag.dataMasterProjectInformation.Count; i++)
+{
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @ViewBag.dataMasterProjectInformation[i].Name
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.ProjectInformations[i].Value)
+                    <input type="hidden" name="ProjectInformations[@i].MasterProjectInformationId" value="@ViewBag.dataMasterProjectInformation[i].Id" />
+                    <div class="col-sm-5">
+                        @Html.ValidationMessageFor(model => model.ProjectInformations[i].Value, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}<br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#locationDetails">Location Details</a></li>
+    </ul>
+    @*<h2>Location Details</h2>*@
+    <div class="tab-content">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Locations.AddressLine1)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Locations.AddressLine1)
+                </div>
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.Locations.AddressLine1)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    @Html.LabelFor(model => model.Locations.AddressLine2)
+                </div>
+                <div class="col-sm-3">
+                    @Html.EditorFor(model => model.Locations.AddressLine2)
+                </div>
+                <div class="col-sm-5">
+                    @Html.ValidationMessageFor(model => model.Locations.AddressLine2)
+                </div>
+            </div>
+        </div>
+    </div><br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#locationDetails">Profile Picture</a></li>
+    </ul>
+    <div class="form-group">
+        <div class="">
+            <img height="240" width="320" src="@Url.Content("~/ProjectProfilePicture/" + Model.ProfilePicture)" alt="Image" />
+        </div>
+        <div>
+            <b>Change</b> 
+            <div class="col-sm-3">
+                @Html.TextBoxFor(model => model.ProfilePictureDetail, new { type = "file" })
+            </div>
+            <div class="col-sm-5">
+                @Html.ValidationMessageFor(model => model.ProfilePictureDetail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <br /><br />
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#locationDetails">Cover Picture</a></li>
+    </ul>
+
+
+    <div class="form-group">
+        <div class="">
+            <img height="240" width="320" src="@Url.Content("~/ProjectCoverPicture/" + Model.CoverPicture)" alt="Image" />
+            <br />
+        </div>
+        <div>
+            <b>Change :</b> 
+            <div class="col-sm-3">
+                @Html.TextBoxFor(model => model.CoverPictureDetail, new { type = "file" })
+            </div>
+            <div class="col-sm-5">
+                @Html.ValidationMessageFor(model => model.CoverPictureDetail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+    @Html.HiddenFor(Model => Model.CoverPicture)
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#locationDetails">Profile Images</a></li>
+            </ul>
+        for (int i = 0; i < Model.Images.Count; i++)
+        {
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.LabelFor(model => model.Images[i].Image)
+                    @Html.CheckBoxFor(model => model.ImageToBeDeleted[i].deleted)
+                    <input type="hidden" name="ImageToBeDeleted[@i].imageId" value="@Model.Images[i].Id" />
+                    <img height="240" width="320" src="@Url.Content("~/ProjectImages/" + Model.Images[i].Image)" alt="Image" />
+                </div>
+            </div>
+
+            @Html.HiddenFor(Model => Model.Images[i].Id)
+            @Html.HiddenFor(Model => Model.Images[i].ProjectId)
+            @Html.HiddenFor(Model => Model.Images[i].Image)
+            @Html.HiddenFor(Model => Model.Images[i].Likes)
+            @Html.HiddenFor(Model => Model.Images[i].DisLikes)
+        }
+        <b>Add More Pictures</b>    @Html.TextBoxFor(model => model.ProjectImagesDetails, new { type = "file", Multiple="multiple" })
+        @Html.ValidationMessageFor(model => model.ProjectImagesDetails, "", new { @class = "text-danger" })
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#locationDetails">Introdyctory Video</a></li>
+    </ul>
+    <video>
+        <source src="@Url.Content("~/IntroductoryVideo/" + Model.IntroductoryVideos.Link)" type='video/mp4' />
+    </video>
+                <div>
+                    @Html.HiddenFor(Model => Model.IntroductoryVideos.Link)
+                    <b>Change :</b>@Html.TextBoxFor(model => model.IntroDuctoryVideosDetails, new { type = "file" })
+                    @Html.ValidationMessageFor(model => model.IntroDuctoryVideosDetails, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(Model => Model.IntroductoryVideos.Id)
+                    @Html.HiddenFor(Model => Model.IntroductoryVideos.ProjectId)
+                    @Html.HiddenFor(Model => Model.IntroductoryVideos.Time)
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="EDIT" class="btn btn-default" />
+                    </div>
+                </div>
+}

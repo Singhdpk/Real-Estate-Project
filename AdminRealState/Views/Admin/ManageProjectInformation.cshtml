@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AdminPanel.Models.MasterProjectInformation>
+@{
+    ViewBag.Title = "ManageProjectInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ManageProjectInformation</h2>
+@using (Html.BeginForm("ManageProjectInformation", "", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <ul class="nav nav-tabs">
+        <li class="active"><b>Manage Project Information</b></li>
+    </ul>
+    <table class="table">
+        <tr>
+    <th>
+        @Html.DisplayNameFor(model => model.Id)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Name)
+    </th>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        @if (ViewBag.dataId == null || ViewBag.dataId != item.Id)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        }
+        else
+        {
+            <td>
+
+                <input type="hidden" name="Id" value=@item.Id />
+                <input type="text" name="Name" value="@item.Name" />
+            </td>
+        }
+
+        @if (ViewBag.dataId == null || ViewBag.dataId != item.Id)
+        {
+            <td>
+                @Html.ActionLink("Edit", "ManageProjectInformation", new { id = item.Id })
+            </td>
+        }
+        else
+        {
+            <td>
+                <input type="submit" value="Save" />
+
+            </td>
+        }
+        <td>
+            @Html.ActionLink("Delete", "DeleteMasterProjectInformation", new { id = item.Id })
+        </td>
+    </tr>
+    }
+        </table>
+        <b>Add new type of Master Project Information</b>
+        <input type="text" name="Name" />
+        <input type="submit" value="Add" />
+}
+

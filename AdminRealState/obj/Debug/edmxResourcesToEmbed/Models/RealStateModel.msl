@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbRealEstateModelStoreContainer" CdmEntityContainer="dbRealEstateEntities">
+    <EntitySetMapping Name="tblAmenities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblAmenity">
+        <MappingFragment StoreEntitySet="tblAmenity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterAmenityId" ColumnName="MasterAmenityId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblApartmentBuildQualities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblApartmentBuildQuality">
+        <MappingFragment StoreEntitySet="tblApartmentBuildQuality">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterApartmentBuildQualityId" ColumnName="MasterApartmentBuildQualityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBuilderProfiles">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblBuilderProfile">
+        <MappingFragment StoreEntitySet="tblBuilderProfile">
+          <ScalarProperty Name="BuilderId" ColumnName="BuilderId" />
+          <ScalarProperty Name="MasterBuilderProfileId" ColumnName="MasterBuilderProfileId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblCity">
+        <MappingFragment StoreEntitySet="tblCity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblConstructionQualityParameters">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblConstructionQualityParameter">
+        <MappingFragment StoreEntitySet="tblConstructionQualityParameter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterConstructionQualityParameterId" ColumnName="MasterConstructionQualityParameterId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFollowProjects">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblFollowProject">
+        <MappingFragment StoreEntitySet="tblFollowProject">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblImages">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblImage">
+        <MappingFragment StoreEntitySet="tblImage">
+          <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInappropriates">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblInappropriate">
+        <MappingFragment StoreEntitySet="tblInappropriate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblIntroductoryVideos">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblIntroductoryVideo">
+        <MappingFragment StoreEntitySet="tblIntroductoryVideo">
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInventories">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblInventory">
+        <MappingFragment StoreEntitySet="tblInventory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterInventoryId" ColumnName="MasterInventoryId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLegalClarities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblLegalClarity">
+        <MappingFragment StoreEntitySet="tblLegalClarity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterLegalClarityId" ColumnName="MasterLegalClarityId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLevels">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblLevel">
+        <MappingFragment StoreEntitySet="tblLevel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLivabilities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblLivability">
+        <MappingFragment StoreEntitySet="tblLivability">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterLivabilityId" ColumnName="MasterLivabilityId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocations">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblLocation">
+        <MappingFragment StoreEntitySet="tblLocation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterAmenities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterAmenity">
+        <MappingFragment StoreEntitySet="tblMasterAmenity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterApartmentBuildQualities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterApartmentBuildQuality">
+        <MappingFragment StoreEntitySet="tblMasterApartmentBuildQuality">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterConstructionQualityParameters">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterConstructionQualityParameter">
+        <MappingFragment StoreEntitySet="tblMasterConstructionQualityParameter">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterInventories">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterInventory">
+        <MappingFragment StoreEntitySet="tblMasterInventory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterLegalClarities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterLegalClarity">
+        <MappingFragment StoreEntitySet="tblMasterLegalClarity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterLivabilities">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterLivability">
+        <MappingFragment StoreEntitySet="tblMasterLivability">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterProjectInformations">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterProjectInformation">
+        <MappingFragment StoreEntitySet="tblMasterProjectInformation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterReviews">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterReview">
+        <MappingFragment StoreEntitySet="tblMasterReview">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjects">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblProject">
+        <MappingFragment StoreEntitySet="tblProject">
+          <ScalarProperty Name="CoverPicture" ColumnName="CoverPicture" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="AverageRating" ColumnName="AverageRating" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Possession" ColumnName="Possession" />
+          <ScalarProperty Name="Pricing" ColumnName="Pricing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjectInformations">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblProjectInformation">
+        <MappingFragment StoreEntitySet="tblProjectInformation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="MasterProjectInformationId" ColumnName="MasterProjectInformationId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRecentlyVieweds">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblRecentlyViewed">
+        <MappingFragment StoreEntitySet="tblRecentlyViewed">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReviews">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblReview">
+        <MappingFragment StoreEntitySet="tblReview">
+          <ScalarProperty Name="LastVisited" ColumnName="LastVisited" />
+          <ScalarProperty Name="SayThanks" ColumnName="SayThanks" />
+          <ScalarProperty Name="IsReviewed" ColumnName="IsReviewed" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AverageValue" ColumnName="AverageValue" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Helpful" ColumnName="Helpful" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReviewDetails">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblReviewDetail">
+        <MappingFragment StoreEntitySet="tblReviewDetails">
+          <ScalarProperty Name="SayThanks" ColumnName="SayThanks" />
+          <ScalarProperty Name="Helpful" ColumnName="Helpful" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="ReviewedUserId" ColumnName="ReviewedUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReviewRatingDetails">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblReviewRatingDetail">
+        <MappingFragment StoreEntitySet="tblReviewRatingDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="MasterReviewId" ColumnName="MasterReviewId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUpdatedVideos">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblUpdatedVideo">
+        <MappingFragment StoreEntitySet="tblUpdatedVideo">
+          <ScalarProperty Name="Likes" ColumnName="Likes" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUser">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="LevelId" ColumnName="LevelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAverageRatings">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblAverageRating">
+        <MappingFragment StoreEntitySet="tblAverageRating">
+          <ScalarProperty Name="Livability" ColumnName="Livability" />
+          <ScalarProperty Name="LegalClarity" ColumnName="LegalClarity" />
+          <ScalarProperty Name="Inventory" ColumnName="Inventory" />
+          <ScalarProperty Name="ConstructionQualityParameter" ColumnName="ConstructionQualityParameter" />
+          <ScalarProperty Name="BuilderProfile" ColumnName="BuilderProfile" />
+          <ScalarProperty Name="ApartmentBuildQuality" ColumnName="ApartmentBuildQuality" />
+          <ScalarProperty Name="Amenity" ColumnName="Amenity" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMasterBuilderProfiles">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblMasterBuilderProfile">
+        <MappingFragment StoreEntitySet="tblMasterBuilderProfile">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBuilders">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblBuilder">
+        <MappingFragment StoreEntitySet="tblBuilder">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="TotalProjectsCount" ColumnName="TotalProjectsCount" />
+          <ScalarProperty Name="YearOfEstablishment" ColumnName="YearOfEstablishment" />
+          <ScalarProperty Name="CompanyRegistrationNumber" ColumnName="CompanyRegistrationNumber" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBuilderComments">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblBuilderComment">
+        <MappingFragment StoreEntitySet="tblBuilderComment">
+          <ScalarProperty Name="IsConvinced" ColumnName="IsConvinced" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="BuilderId" ColumnName="BuilderId" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBuilderDirectors">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblBuilderDirector">
+        <MappingFragment StoreEntitySet="tblBuilderDirector">
+          <ScalarProperty Name="NameOfDirector" ColumnName="NameOfDirector" />
+          <ScalarProperty Name="BuilderId" ColumnName="BuilderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjectBuilderMappings">
+      <EntityTypeMapping TypeName="dbRealEstateModel.tblProjectBuilderMapping">
+        <MappingFragment StoreEntitySet="tblProjectBuilderMapping">
+          <ScalarProperty Name="BeneficiaryName" ColumnName="BeneficiaryName" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="BuilderId" ColumnName="BuilderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
